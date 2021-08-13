@@ -12,4 +12,8 @@ https://user-images.githubusercontent.com/44137494/129424808-45d1cc8e-4523-45ef-
 
 ## Sensor selection
 ### Concrete Autoencoder
+- feature selection with autoencoders
+- RNN/LSTM compatible selector layer
 ### Centered Kernel Alignment (CKA)
+- HSIC
+- incomplete Cholesky decomposition
