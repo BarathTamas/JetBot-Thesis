@@ -1,7 +1,7 @@
 # JetBot Thesis
 
 ## Introduction
-The Thesis consists of two parts. In the first part a customized JetBot with a Jetson Nano 4GB board is used to perform measurements around a room. In the second part unsupervised time series feature selection is used to identify the $k$ sensor locations with the "maximal information".
+The Thesis consists of two parts. In the first part a customized JetBot with a Jetson Nano 4GB board is used to perform measurements around a room. In the second part unsupervised time series feature selection is used to identify the _k_ sensor locations with the "maximal information".
 
 ## Data Collection
 ### Road following demo
