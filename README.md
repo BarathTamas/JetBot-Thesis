@@ -12,8 +12,25 @@ https://user-images.githubusercontent.com/44137494/129424808-45d1cc8e-4523-45ef-
 
 ## Sensor selection
 ### Concrete Autoencoder
-- feature selection with autoencoders
-- RNN/LSTM compatible selector layer
+#### Source used
+The concrete autoencoder is an end-to-end differentiable method for global feature selection, which efficiently identifies a subset of the most informative features and simultaneously learns a neural network to reconstruct the input data from the selected features. The method can be applied to unsupervised and supervised settings, and is a modification of the standard autoencoder.
+
+For more details, see the author's paper: ["Concrete Autoencoders for Differentiable Feature Selection and Reconstruction"](https://arxiv.org/abs/1901.09346), *ICML 2019*, and please use the citation below.
+
+```
+@article{abid2019concrete,
+  title={Concrete Autoencoders for Differentiable Feature Selection and Reconstruction},
+  author={Abid, Abubakar and Balin, Muhammed Fatih and Zou, James},
+  journal={arXiv preprint arXiv:1901.09346},
+  year={2019}
+}
+```
+#### Added modifications:
+- RNN/LSTM compatibility
+- IPython display outputs during training
+- custom checkpoint that saves the best _converged_ model
 ### Centered Kernel Alignment (CKA)
-- HSIC
+#### Features
+- CKA
+- HSIC with test statistic
 - incomplete Cholesky decomposition
