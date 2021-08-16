@@ -31,7 +31,7 @@ For more details, see the author's paper: ["Concrete Autoencoders for Differenti
 - custom checkpoint that saves the best _converged_ model
 ### Hilbert-Schmidt Independence Criterion (HSIC) and Centered Kernel Alignment (CKA)
 #### Introduction
-The goal of HSIC and CKA is to establish dependence between two series of arbitrary dimensions. An analogy could be HSIC being a non-linear "covariance", and CKA the normalized version, "correlation".
+The goal of HSIC and CKA is to establish dependence between two series of arbitrary dimensions. An analogy could be HSIC being a non-linear "covariance", and CKA the normalized version, "correlation". However, HSIC and CKA do not require matching dimensions for the compared series, which makes them more similar to a non-linear canonical correlation analysis (CCA).
 #### Contribution
 My implementation is more efficient than the others I could find on GitHub. In addition I also included code for the incomplete Cholesky approximation, but the latter is just Python adaptation of John Shawe-Taylor and Nello Cristianini's Matlab code (Kernel methods for pattern analysis, 5.2 Computing projections: page 126–129.).
 #### Features
