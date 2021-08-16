@@ -48,8 +48,8 @@ def incomplete_cholesky_kernel(X, k, sigma = None, eta = 0.001):
     """
     Incomplete Cholesky decomposition without 
     precalculation of the kernel matrix. This has less space and
-    time complexity, but to estimate the median, all pairwise
-    squared Euclidean distances would needed, so sigma needs to 
+    time complexity, but to estimate sigma, all pairwise
+    squared Euclidean distances would be needed (O(n^2)), so sigma needs to 
     be supplied.
     
     Parameters
