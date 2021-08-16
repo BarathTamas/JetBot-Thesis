@@ -35,6 +35,6 @@ The goal of HSIC and CKA is to establish dependence between two series of arbitr
 #### Contribution
 My implementation is more efficient than the others I could find on GitHub. In addition I also included code for the incomplete Cholesky approximation, but the latter is just Python adaptation of John Shawe-Taylor and Nello Cristianini's Matlab code (Kernel methods for pattern analysis, 5.2 Computing projections: page 126–129.).
 #### Features
-- CKA
+- CKA with greedy feature selection
 - HSIC with test statistic
 - incomplete Cholesky decomposition
