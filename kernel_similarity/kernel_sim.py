@@ -180,32 +180,7 @@ def HSICb(X, Y):
     # Efficient calculation of trace of dot product
     return np.einsum('ij,ji->', K, L)/n**2
     
-def HSICb_approx(X, Y, k=100):
-    n=X.shape[0]
-    # Calculate squared distance matrix
-    K = vectorized_sq_dist(X,X)
-    # Estimate kernel width
-    width_X = estimate_kernel_width(K)
-    # Reuse distance matrices from kernel width estimation
-    # Apply RBF in place
-    sq_dist_to_RBF(K,width_X, True)
-    # Take approximation of K
-    K,_=incomplete_cholesky(K,k)
-    
-    # Repeat for other variable
-    L = vectorized_sq_dist(Y,Y)
-    width_Y = estimate_kernel_width(L)
-    sq_dist_to_RBF(L,width_Y, True)
-    L,_=incomplete_cholesky(L,k)
-    
-    # Center one of the lower triangles
-    K_c = K.T - K.T.mean(axis=0)
-    # Intermediate result
-    inter = L * np.mat(K_c)
-    # This is the biased estimate!
-    return np.trace(inter * inter.T)/n**2
-
-def HSICb_approx2(X, Y, k=100, sigmas=None, precalc=True):
+def HSICb_approx(X, Y, k=100, sigmas=None, precalc=True):
     '''
     Calculates the biased HSIC of X and Y using incomplete
     Cholseky approximation.
