@@ -10,6 +10,12 @@ from tensorflow.keras.losses import mean_squared_error
 from tensorflow.keras.callbacks import Callback
 import IPython
 
+
+'''
+Code adapted for RNN/LSTM layers and proper checkpointing from:
+
+    https://github.com/mfbalin/Concrete-Autoencoders
+'''
 def root_mean_squared_error(y_true, y_pred):
     return K.sqrt(mean_squared_error(y_true, y_pred))
 
@@ -103,9 +109,6 @@ class StopperCallback(EarlyStopping):
                                                                                                   logs['loss'],
                                                                                                   logs['val_loss'])
         self.out.update(IPython.display.Pretty(sep+"\n"+status+'\n'+sep))
-        #print('mean max of probabilities:', self.get_monitor_value(logs), '- temperature', K.get_value(self.model.get_layer('concrete_select').temp))
-        #print( K.get_value(K.max(K.softmax(self.model.get_layer('concrete_select').logits), axis = -1)))
-        #print(K.get_value(K.max(self.model.get_layer('concrete_select').selections, axis = -1)))
     
     def get_monitor_value(self, logs):
         monitor_value = K.get_value(K.mean(K.max(K.softmax(self.model.get_layer('concrete_select').logits), axis = -1)))
